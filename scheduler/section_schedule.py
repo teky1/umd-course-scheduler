@@ -13,6 +13,9 @@ class SectionSchedule:
         self.scheduler = scheduler
 
     def can_add(self, new_section: scheduler.Section) -> bool:
+
+        # Verifies no courses overlap and time gap is appropriate
+
         pass
 
     def copy(self) -> SectionSchedule:

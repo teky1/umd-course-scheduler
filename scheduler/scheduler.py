@@ -1,12 +1,21 @@
 from __future__ import annotations
 
+from typing import List
+
 import scheduler
 
 class CourseListParams:
     pass
 
 class AddValidationParams:
-    pass
+    # Transport: WALK=0 BIKE=1
+    def __init__(self, transport: str = "WALK",
+                 section_reqs: dict = None,
+                 schedule_blocks: List[scheduler.TimeBlock] = None):
+
+        self.transport = 1 if transport == "BIKE" else 0
+        self.section_reqs = {} if section_reqs is None else section_reqs
+        self.schedule_blocks = [] if schedule_blocks is None else schedule_blocks
 
 class ScoringCriteria:
     pass
